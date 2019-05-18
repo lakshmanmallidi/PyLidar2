@@ -4,7 +4,7 @@ import time # Time module
 #In linux type in terminal -- ls /dev/tty* 
 port = raw_input("Enter port name which lidar is connected:") #windows
 #port = "/dev/ttyUSB0" #linux
-Obj = PyLidar2.YdLidarX4(port)#PyLidar2.your_version_of_lidar(port,chunk_size)
+Obj = PyLidar2.YdLidarX4(port)
 if(Obj.Connect()):
     print(Obj.GetDeviceInfo())
     gen = Obj.StartScanning()
