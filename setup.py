@@ -4,20 +4,21 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="PyLidar2",
-    python_requires="<=2.7.15",
-    version="1.1",
+    python_requires="<3",
+    version="1.3",
     author="Lakshman mallidi",
     author_email="lakshman.mallidi@gmail.com",
-    description="Library for Lidar. Currently supports YdLidar from http://www.ydlidar.com",
+    description="Library for Lidar. Currently supports YdLidar(X4,G4) from http://www.ydlidar.com",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/lakshmanmallidi/YdLidar.git",
+    url="https://github.com/lakshmanmallidi/PyLidar2",
     packages=['PyLidar2'],
     install_requires=[
         'pyserial',
+        'enum'
     ],
     classifiers=[
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
