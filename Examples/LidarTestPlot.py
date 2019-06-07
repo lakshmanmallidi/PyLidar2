@@ -19,12 +19,12 @@ def draw():
 is_plot = True
 x=[]
 y=[]
-for _ in range(360):
+for _ in range(361):
     x.append(0)
     y.append(0)
 
 port =  raw_input("Enter port name which lidar is connected:") #windows
-Obj = PyLidar2.YdLidarX4(port) #PyLidar2.your_version_of_lidar(port,chunk_size)
+Obj = PyLidar2.YdLidarX4(port)
 threading.Thread(target=draw).start()
 if(Obj.Connect()):
     print(Obj.GetDeviceInfo())
@@ -32,7 +32,7 @@ if(Obj.Connect()):
     t = time.time() # start time 
     while (time.time() - t) < 30: #scan for 30 seconds
         data = gen.next()
-        for angle in range(0,360):
+        for angle in range(0,361):
             if(data[angle]>1000):
                 x[angle] = data[angle] * math.cos(math.radians(angle))
                 y[angle] = data[angle] * math.sin(math.radians(angle))
